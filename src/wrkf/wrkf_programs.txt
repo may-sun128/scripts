@@ -1,0 +1,33 @@
+1A                          50  1a
+All Things Considered       51  atc
+American Routes             52  ar
+BBC                         53  bbc
+Center Stage                54  cs
+Fresh Air                   55  fa
+Hidden Brain                56  hb
+Hootenary Power             58  hp
+How I Built This            59  hibt
+LA Considered               60  lac 
+Left, Right, and Center     61  lr&c
+Louisiana Considered        62  lc
+Louisiana Eats!             63  le
+Market Place                64  mp
+Milk Street Radio           65  msr
+Morning Addition            66  ma
+On the Media                67  otm
+Out To Lunch                68  otl
+Planet Money                69  pm
+Radio Lab                   70  rl
+Science Friday              71  sf
+Selected Shorts             72  ss
+Talk LA                     73  tla
+Ted Radio Hour              74  trh
+The Daily                   75  td
+The Moth                    76  tm
+The Reading Life            77  trl
+Think                       78  t
+This American Life          79  tal
+Today, Explained            80  te
+Variable                    81  variable
+Wait Wait... Don't Tell Me  82  wwdtm
+Weekend Addition            83  wa
