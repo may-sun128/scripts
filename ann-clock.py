@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 import datetime 
 from termcolor import colored
 
@@ -5,18 +7,20 @@ class Ascii_Numbers:
    def __init__(self):
 
       self.zero = '''
- 0000
-00  00
-00  00
-00  00
- 0000'''
+       0000
+      00  00
+      00  00
+      00  00
+       0000
+      '''
 
       self.one = '''
-1111
-  11
-  11
-  11
-111111'''
+      1111
+        11
+        11
+        11
+      111111
+      '''
 
       self.two = '''
        2222
@@ -59,11 +63,11 @@ class Ascii_Numbers:
       '''
 
       self.seven = '''
-777777
-   77
-  77
- 77
-77'''
+      777777
+         77
+        77
+       77
+      77'''
 
       self.eight = '''
        8888
@@ -95,39 +99,38 @@ class Ascii_Numbers:
       # self.six.rstrip()
       # self.seven.rstrip()
 
-def main():
+def get_colored_time():
    time = datetime.datetime.now().strftime("%X")
 
    colors = ['red', 'green', 'yellow', 'blue', 'magenta', 'cyan']
-   colored_time = ''
+   colored_time = []
    i = 0
    letters = Ascii_Numbers()
 
    for char in time:
       try:
          if str(char) == '1':
-            colored_time += colored(letters.one.rstrip(), colors[i])
+            colored_time.insert(0, colored(letters.one.strip('n'), colors[i]))
          elif str(char) == '0':
-            colored_time += colored(letters.zero.rstrip(), colors[i])
+            colored_time.insert(0, colored(letters.one.strip('n'), colors[i]))
          elif str(char) == '2':
-            colored_time += colored(letters.two.rstrip(), colors[i])
+            colored_time.insert(0, colored(letters.one.strip('n'), colors[i]))
          elif str(char) == '3':
-            colored_time += colored(letters.three.rstrip(), colors[i])
+            colored_time.insert(0, colored(letters.one.strip('n'), colors[i]))
          elif str(char) == '4':
-            colored_time += colored(letters.four.rstrip(), colors[i])
+            colored_time.insert(0, colored(letters.one.strip('n'), colors[i]))
          elif str(char) == '5':
-            colored_time += colored(letters.five.rstrip(), colors[i])
+            colored_time.insert(0, colored(letters.one.strip('n'), colors[i]))
          elif str(char) == '6':
-            colored_time += colored(letters.six.rstrip(), colors[i])
+            colored_time.insert(0, colored(letters.one.strip('n'), colors[i]))
          elif str(char) == '7':
-            colored_time += colored(letters.seven.rstrip(), colors[i])
+            colored_time.insert(0, colored(letters.one.strip('n'), colors[i]))
          elif str(char) == '8':
-            colored_time += colored(letters.eight.rstrip(), colors[i])
+            colored_time.insert(0, colored(letters.one.strip('n'), colors[i]))
          elif str(char) == '9':
-            colored_time += colored(letters.nine.rstrip(), colors[i])
+            colored_time.insert(0, colored(letters.one.strip('n'), colors[i]))
          elif str(char) == ':':
-            colored_time += colored(letters.colon.rstrip(), colors[i])
-
+            colored_time.insert(0, colored(letters.one.strip('n'), colors[i]))
       except:
          debug_print('off by one')
       if i < 5:
@@ -135,12 +138,18 @@ def main():
       else:
          i = 0
 
+   return colored_time
+
+
+
+def debug():
+   colored_time = get_colored_time()
+   print(colored_time)
+   print('Built')
+
+def main():
+   colored_time = get_colored_time()
    print(colored_time)
 
-   debug_print('Built')
-
-def debug_print(s):
-   print(s)
-
-main()
-
+#main()
+debug()
