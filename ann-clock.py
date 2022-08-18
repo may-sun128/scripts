@@ -82,20 +82,21 @@ class Ascii_Numbers:
       
 ##'''
 
+      self.fuck = 'fuck'
+
 def get_colored_time() -> str:
    time = datetime.datetime.now().strftime("%X")
-
-   colors = ['red', 'green', 'yellow', 'blue', 'magenta', 'cyan']
-   colored_time = ''
    i = 0
    letters = Ascii_Numbers()
+   ascii_time = ''
+
 
    for char in time:
       try:
          if str(char) == '1':
-            colored_time += colored(letters.one, colors[i])
+            ascii_time += join_art("", one, "")
          elif str(char) == '0':
-            colored_time += colored(letters.zero, colors[i])
+            ascii_time += join_art("", zero, "")
          elif str(char) == '2':
             colored_time += colored(letters.two, colors[i])
          elif str(char) == '3':
@@ -115,7 +116,7 @@ def get_colored_time() -> str:
          elif str(char) == ':':
             colored_time += colored(letters.colon, colors[i])
       except:
-         debug_print('off by one')
+         print('off by one')
       if i < 5:
          i += 1
       else:
@@ -132,7 +133,6 @@ def join_art(s1, s2, str_between=''):
    f_str = '{:<' + str(max_dist) + '}{}{}'
    s3 = "\n".join([f_str.format(str1, str_between, str2) for str1, str2 in zip(lines1, lines2)])
    return s3
-
 
 def debug():
    colored_time = get_colored_time()
@@ -155,6 +155,13 @@ def main():
 
    print(colored_time)
 
+def debug_or_main():
+   i = input("Debug or Main")
+   if i == 'd':
+      debug()
+   elif i == 'm':
+      main()
+   else:
+      print('debug main error')
 
-#main()
-debug()
+debug_or_main()
