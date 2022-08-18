@@ -123,7 +123,8 @@ def get_colored_time() -> str:
 
    return colored_time
 
-# Working, but only with two string 
+# Working, but only with two string
+# Also, not changing color
 def join_art(s1, s2, str_between=''):
    lines1 = s1.split('\n')
    lines2 = s2.split('\n')
