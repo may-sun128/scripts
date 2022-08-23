@@ -1,7 +1,13 @@
+#!/usr/bin/python
+
 import pyautogui
 import time
 import sys
 from datetime import datetime
+# I'd like for when the mouse is moving, it rains
+# But there's some kind of module issue
+# (I don't really understand how modules word lol)
+#from rain import * 
 
 pyautogui.FAILSAFE = False
 minutes_before_jiggle = None
@@ -51,10 +57,15 @@ def jiggle(minutes_before_jiggle: int, timeout_hour: str):
         #print("Movement made at {}".format(datetime.now().time()))
 
 def main():
-    # start immediately (first arg), timeout at 1am (second arg)
-    jiggle(0, '01')
+    try:
+        # start immediately (first arg), timeout at 1am (second arg)
+        jiggle(0, '01')
 
-    db.dprint('Built')
+        db.dprint('Built')
+    except KeyboardInterrupt:
+        print('Exited.')
+
 
 if __name__ == '__main__':
     main()
+

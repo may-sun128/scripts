@@ -127,18 +127,19 @@ intensity = args.get("intensity", 1)
 timing = args.get("timing", 0.08)
 drop_colors = args.get("colors", ["blue", "b_blue"])
 
+def rmain():
+    print('\033[?25l', end="") ## hides the cursor
+    New_Drop()
 
+    try:
+        while True:
+            Rain()
+            time.sleep(timing)
+            Clear_Screen()
+            Weather_Forecast()
 
-print('\033[?25l', end="") ## hides the cursor
-New_Drop()
-
-try:
-    while True:
-        Rain()
-        time.sleep(timing)
+    except KeyboardInterrupt:
         Clear_Screen()
-        Weather_Forecast()
+        print('\033[?25h', end="") # makes cursor visible again
 
-except KeyboardInterrupt:
-    Clear_Screen()
-    print('\033[?25h', end="") # makes cursor visible again
+rmain()
