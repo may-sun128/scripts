@@ -10,8 +10,8 @@ def get_seconds_to_sleep():
 	year = int(now.strftime('%Y')) # or %y?
 	month = int(now.strftime('%m')) 
 	day = int(now.strftime('%d')) + 1 # will not work on the last day of the month 
-	hour = int('1')
-	minute = int('15')
+	hour = int('2')
+	minute = int('1')
 
 	# time to go to sleep 
 	# year month day hour minute second
@@ -33,7 +33,10 @@ def countdown(seconds_to_sleep):
 def main():
 	seconds_to_sleep = get_seconds_to_sleep()
 
-	subprocess_object = subprocess.Popen(f'sleep {seconds_to_sleep} && systemctl suspend', stdout=subprocess.PIPE, shell=True)
+	#subprocess_object = subprocess.Popen(f'sleep {seconds_to_sleep} && systemctl suspend', stdout=subprocess.PIPE, shell=True)
+	
+	time.sleep(seconds_to_sleep)
+	subprocess_object = subprocess.Popen(f'systemctl suspend', stdout=subprocess.PIPE, shell=True)
 	binary_output, err = subprocess_object.communicate()
 
 	print(err)
