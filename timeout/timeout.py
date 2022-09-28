@@ -1,82 +1,67 @@
-import datetime 
-import sys
-import subprocess
+#!/usr/bin/python
+
+import datetime
+import os
 import time
-import os 
-
-'''
-Most recent version 22-09-19
-'''
-
-def trim_zero(h: str):
-	if h[0] == '0':
-		new_h = h.replace('0', '')
-		return new_h
-	else:
-		return h
+import sys 
 
 
-def get_sleep_time():
-	if len(sys.argv) > 1:
-		user_sleep_time: str = sys.argv[1]
-		hour = trim_zero(user_sleep_time[:2])
-		# print(f'hour = {hour}')
-		minute = trim_zero(user_sleep_time[2:])
-		# print(f'minute = {minute}')
-		return [hour, minute]
-	elif len(sys.argv) == 1:
-		# default sleep time
-		return ['21', '30']
-
-
-def get_seconds(time: list):
-	### target time ###
-	seconds_to_sleep = 0
-	# hours in seconds
-	seconds_to_sleep += int(time[0]) * 60 * 60
-	# minutes in seconds
-	seconds_to_sleep += int(time[1]) * 60
-
-	### current time ###
-	current_seconds = 0
-	current_time = datetime.datetime.now()
-	# hours in seconds
-	current_hour = int(current_time.strftime('%H')) * 60 * 60
-	# minutes in seconds
-	current_moment = int(current_time.strftime('%M')) * 60
-	print(f'h={current_moment}')
-	current_seconds += current_hour + current_moment
-
-	# make sure it doesn't return a negative number
-	if current_seconds > seconds_to_sleep:
-		seconds = current_seconds - seconds_to_sleep
-	else:
-		seconds = seconds_to_sleep - current_seconds
-	print(seconds)
-	# trying to fix the 24 hour problem
-	return seconds
+if len(sys.argv) == 1:
+	alarm_input = '00:30'
+else:
+	alarm_input = sys.argv[1]
 
 def countdown(seconds: int):
 	start = 0
 	while start < seconds:
-		print(seconds)
+		# uncomment to see to seconds count down
+		#print(seconds)
 		time.sleep(1)
-		os.system('clear')
+		#os.system('clear')
 		seconds -= 1
 
+def get_seconds(target_time):
+# Convert the alarm time from [H:M] or [H:M:S] to seconds
+	alarm_time = [int(n) for n in target_time.split(":")]
+	seconds_hms = [3600, 60, 1] # Number of seconds in an Hour, Minute, and Second
+	alarm_seconds = sum([a*b for a,b in zip(seconds_hms[:len(alarm_time)], alarm_time)])
 
-sleep_time = get_sleep_time()
-seconds = get_seconds(sleep_time)
-print(f'hours = {(seconds / 60) / 60}')
-countdown(seconds)
+	# Get the current time of day in seconds
+	now = datetime.datetime.now()
+	current_time_seconds = sum([a*b for a,b in zip(seconds_hms, [now.hour, now.minute, now.second])])
 
-# fuck doing it this way
-#subprocess_object = subprocess.Popen("echo test", stdout=subprocess.PIPE, shell=True)
-#binary_output, err = subprocess_object.communicate()
-#print(binary_output.decode('ascii'))
+	# Calculate the number of seconds until alarm goes off
+	time_diff_seconds = alarm_seconds - current_time_seconds
 
-# os.system for the win 
+	# If time difference is negative, set alarm for next day
+	if time_diff_seconds < 0:
+		time_diff_seconds += 86400 # number of seconds in a day
+
+	return time_diff_seconds
+
+'''
+def check_success():
+	f = open('home/mholmes/JunkDrawer/timeout-working/test.txt', 'w', 'x')
+	f.write('program has been launched') 
+	f.close() 
+
+check_success()
+'''
+ 
+time_diff_seconds = get_seconds(alarm_input)
+
+countdown(time_diff_seconds)
+
 os.system('systemctl suspend')
+#os.system('echo "it worked"')
+
+
+
+
+
+
+
+
 
 
 

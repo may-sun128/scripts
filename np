@@ -1,0 +1,66 @@
+#!/usr/bin/python
+
+import os
+import datetime
+import subprocess
+
+# TODO
+def save_input(text):
+	n = datetime.datetime.now()
+	d = n.strftime('%d%m%y')
+	t = n.strftime('%X') 
+	name = d + '-' + t.replace(':', '-') + '.txt'
+	#print(name)
+	f = open(f'/home/mholmes/.cbin/.np-saved-files/{name}', 'x') 
+	f.write(text)
+	f.close()
+	print('Saved Session at /home/mholmes/.cbin/.np-saved-files')
+
+help = '''
+e, exit 	exit prompt
+c, cls 		clear screen
+save 		save session to file'''
+#chprompt	change prompt (similar to PS1 in bash)
+
+def execute_bash(command):
+	obj = subprocess.Popen(f"{command}", stdout=subprocess.PIPE, shell=True)
+	obj_bin, err = obj.communicate()
+
+	# Not sure what the point of this is
+	status = obj.wait()
+
+	val = obj_bin.decode('ascii') 
+	return val
+
+# main 
+text = ''
+prompt = '//'
+count = 0
+while True:
+	count += 1
+	i = input(f'{prompt} ')
+	text += i + '\n'
+	if i == 'e' or i == 'exit':
+		exit() 
+	elif i == 'cls' or i == 'c':
+		os.system('clear') 
+	elif i == 'save':
+		save_input(text)
+	# elif 'chprompt' or 'chp' in i:
+	# 	if len(i.split()) > 1:
+	# 		prompt = i.split()[1]
+	# 	else:
+	# 		pass
+	elif '$' in i:
+		out = execute_bash(i[1:])
+		print(out)
+	elif i == 'new':
+		text = ''
+	elif i == 'help':
+		print(help)
+	elif i == 'count':
+		prompt = count
+
+
+
+
