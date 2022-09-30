@@ -50,6 +50,8 @@ check_success()
  
 time_diff_seconds = get_seconds(alarm_input)
 
+print('set sleeptime...')
+
 countdown(time_diff_seconds)
 
 os.system('systemctl suspend')
