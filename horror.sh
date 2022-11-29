@@ -1,3 +1,3 @@
 #!/usr/bin/bash 
 
-vlc ~/Movies/horror -Z --fullscreen 
+vlc ~/Movies/ -Z --fullscreen 

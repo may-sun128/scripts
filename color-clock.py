@@ -12,7 +12,7 @@ cnt = 0
 
 while(running):	
 	if cnt < len(colors): 	
-		print(colored(datetime.datetime.now(), colors[cnt]))
+		print(colored(datetime.datetime.now().strftime('%X'), colors[cnt]))
 		time.sleep(3)
 	else: 
 		cnt = -1 

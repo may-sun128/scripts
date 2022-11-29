@@ -1,0 +1,6 @@
+VS Code apparently automatically downloaded and installed clangd
+and added it to the path 
+c
+check session 
+session
+__save vscode

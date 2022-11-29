@@ -1,0 +1,24 @@
+(* Berklee Jazz Harmony *)
+(* Chapter 1 *) 
+
+
+V7sus4 - cool alt to dom
+
+* chord function * 
+
+tonic - I, iii, vi
+subdominate - IV, ii
+dominate - V7, V7sus4
+
+* diatonic chord progressions *
+ 
+progression - forward motion
+prolognation - color variation within a functional group 
+retrogression - retreat from tension 
+resolution - release of tension
+
+* bass cycles *
+
+cycle 2, 3, 5 - root motion by second, third, fifth
+
+

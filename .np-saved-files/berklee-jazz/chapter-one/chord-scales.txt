@@ -1,0 +1,27 @@
+// examples in C
+// notes characterized as S refer to melodic use 
+
+I 
+C D E F G A B C
+  T   S   T T 
+
+II-7 (d dorian)  
+D E F G A B C D
+  T   T   S 
+
+// it's dawning on me that all of these chord-scale relationshios can be summed up by by saying you can use the pentatonic scale of the root of the chord plus the 7
+
+III-7 (e phrygian) 
+E F G A B C D E
+  S       S 
+
+IV (f lydian) 
+F G A B C D E F
+
+// all notes sound good--this diverges from the pentatonic theory
+
+V (g mixolydian)
+G A B C D E F G
+      S
+  
+

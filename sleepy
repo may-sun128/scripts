@@ -1,0 +1,8 @@
+#!/usr/bin/bash
+
+# `$1` corrosponds to the first command line arg
+echo "Don't forget to run as sudo"
+echo "Ex: sudo sleepy.sh 10m" 
+echo "started..."
+sleep $1 
+rtcwake -m mem -a -t $(date +%s -d 'tomorrow 06:00') 

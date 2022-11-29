@@ -7,6 +7,7 @@ import subprocess
 # TODO
 # 	rename __save_input() to something that makes more sense
 #	add ability to save specific lines
+#	update help info 
 
 ### Functions ####
 
