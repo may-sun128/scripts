@@ -1,8 +1,26 @@
 #!/usr/bin/bash
 
-# `$1` corrosponds to the first command line arg
-echo "Don't forget to run as sudo"
-echo "Ex: sudo sleepy.sh 10m" 
+# `$1` corrosponds to the first command line arg 
+# (if getting input at the command line)
+echo "Warning: this command must be run as sudo"
+# Ex: sudo sleepy.sh 10m" 
 echo "started..."
-sleep $1 
+redshift -P -O 2000
+# twenty minutes
+# xset s 10 10
+# echo "xset set"
+# echo "timeout set for 5 minutes"
+# sleep $(date +%s -d 'today 23:00')
+sleep $1
+# echo "hibernating at 02:00 (hopefully)" 
 rtcwake -m mem -a -t $(date +%s -d 'tomorrow 06:00') 
+sleep 30m
+amixer set Master 55%
+echo "volume changed?"
+# xset s 14400 14400
+python $HOME/repos/python/selenium-white-noise/white-noise.py
+
+
+# TODO 
+# volume not working as root
+# white noise not working as root

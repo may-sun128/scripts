@@ -1,6 +1,0 @@
-https://wiki.archlinux.org/title/DisplayLink#Installation
-https://bbs.archlinux.org/viewtopic.php?id=199786
-https://askubuntu.com/questions/565079/ubuntu-vga-to-usb-driver#
-https://www.reddit.com/r/linux4noobs/comments/5noboy/anybody_know_where_i_can_find_the_ubuntu_1604/
-https://askubuntu.com/questions/1040358/using-a-usb-to-hdmi-adapter-on-ubuntu-16-04
-__save monitor-links
