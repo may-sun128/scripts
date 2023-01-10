@@ -1,13 +1,12 @@
 #!/usr/bin/python
 
+# this script simulates mouse movements 
+
 import pyautogui
 import time
 import sys
 from datetime import datetime
-# I'd like for when the mouse is moving, it rains
-# But there's some kind of module issue
-# (I don't really understand how modules word lol)
-#from rain import * 
+
 
 pyautogui.FAILSAFE = False
 minutes_before_jiggle = None

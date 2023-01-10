@@ -1,5 +1,7 @@
 #!/bin/bash 
 
+# this script will automatically move certain file extensions to their respective folders
+
 # TODO: fix names (media.cl) and perform condition to make only if don't already exist
 
 #mkdir cl_pics cl_text-files cl_notes cl_documents cl_vids cl_misc cl_music

@@ -1,6 +1,8 @@
 #!/usr/bin/env python3.10
 # -*- coding: utf-8 -*-
 
+# this script plays rain in the terminal 
+
 import time
 import random
 import os

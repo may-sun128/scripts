@@ -1,5 +1,7 @@
 #!/usr/bin/bash
 
+# this script sets the RTC time and countdowns to it
+
 # `$1` corrosponds to the first command line arg 
 # (if getting input at the command line)
 echo "Warning: this command must be run as sudo"

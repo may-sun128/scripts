@@ -1,5 +1,7 @@
 #!/usr/bin/python
 
+# this script will output the time in different colors every three seconds
+
 import datetime
 import time
 from termcolor import colored

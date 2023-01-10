@@ -2,6 +2,9 @@ import pyaudio
 import wave  
 import os
 
+# this script plays an intro sound
+# I have it in my bspc init file
+
 def set_env():
     os.chdir('/home/mholmes/.scripts/play-intro')
     print(os.getcwd())

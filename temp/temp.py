@@ -1,5 +1,7 @@
 #!/usr/bin/python
 
+# this script cycles through different blue-light tempetures 
+
 import subprocess
 import os
 

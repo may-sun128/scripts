@@ -1,5 +1,7 @@
 #!/usr/bin/python
 
+# this script is a temporary notepad 
+
 import os
 import datetime
 import subprocess

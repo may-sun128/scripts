@@ -1,5 +1,7 @@
 #!/usr/bin/python
 
+# this script increases and decreases the system volume
+
 import subprocess
 import sys 
 
