@@ -38,4 +38,4 @@ def play(wave_file_path):
     p.terminate()  
 
 set_env()
-play('sunrise.wav')
+play('new-electric-piano.wav')

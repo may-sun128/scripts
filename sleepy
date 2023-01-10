@@ -8,21 +8,16 @@ echo "Warning: this command must be run as sudo"
 # Ex: sudo sleepy.sh 10m" 
 echo "started..."
 redshift -P -O 2000
-# twenty minutes
-# xset s 10 10
-# echo "xset set"
-# echo "timeout set for 5 minutes"
-# sleep $(date +%s -d 'today 23:00')
-sleep $1
-# echo "hibernating at 02:00 (hopefully)" 
+sleep $1 
+# real command
 rtcwake -m mem -a -t $(date +%s -d 'tomorrow 06:00') 
-sleep 30m
-amixer set Master 55%
-echo "volume changed?"
-# xset s 14400 14400
+# debugging commad
+# rtcwake --dry-run --mode mem --auto --seconds 5
+# sleep 30m
+amixer set Master 45%
 python $HOME/repos/python/selenium-white-noise/white-noise.py
 
-
-# TODO 
-# volume not working as root
-# white noise not working as root
+# Okay, so some things I did to get rtcwake to work without sudo:
+# - added /usr/sbin/rtc to the sudo file (using `sudo visudo`)
+# - change the permissions to rtc0 with `sudo chmod ugo+r rtc0`
+# - changed the permissions to sys/power/state with read and write permissions
