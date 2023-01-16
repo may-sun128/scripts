@@ -1,0 +1,14 @@
+[Unit]
+Description=
+After=
+
+[Service] 
+ExecStart=/path/to/script
+Restart=always
+WorkingDirectory=
+User=
+Group=
+Environment=
+
+[Install]
+WantedBy=multi-user.target

@@ -14,8 +14,8 @@ rtcwake -m mem -a -t $(date +%s -d 'tomorrow 06:00')
 # debugging commad
 # rtcwake --dry-run --mode mem --auto --seconds 5
 # sleep 30m
-amixer set Master 45%
-python $HOME/repos/python/selenium-white-noise/white-noise.py
+#amixer set Master 45%
+#python $HOME/repos/python/selenium-white-noise/white-noise.py
 
 # Okay, so some things I did to get rtcwake to work without sudo:
 # - added /usr/sbin/rtc to the sudo file (using `sudo visudo`)

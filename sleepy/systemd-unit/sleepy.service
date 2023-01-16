@@ -1,0 +1,10 @@
+[Unit]
+Description=changes ownership of /dev/rtc0
+After=multi-user.target
+
+[Service]
+Type=onceshot
+ExecStart=/usr/bin/chown mholmes:mholmes /dev/rtc0
+
+[Install] 
+WantedBy=graphical.target

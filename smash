@@ -1,0 +1,6 @@
+#!/usr/bin/bash
+
+# this script creates a bash script with the shebang line 
+
+touch "$1".sh
+echo "#!/usr/bin/bash" > "$1".sh

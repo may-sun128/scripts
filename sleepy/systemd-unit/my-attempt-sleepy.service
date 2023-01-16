@@ -1,0 +1,14 @@
+[Unit]
+Description=Set /dev/rtc0 to readable without escalated privilages. 
+After=
+
+[Service] 
+ExecStart=/home/mholmes/.scripts/sleepy/make-rtc0-executable.sh
+Restart=always
+WorkingDirectory=/home/mholmes/.scripts/sleepy
+User=mholmes
+Group=mholmes
+Environment=
+
+[Install]
+WantedBy=multi-user.target

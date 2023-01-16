@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 import pyaudio  
 import wave  
 import os

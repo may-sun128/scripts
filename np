@@ -25,10 +25,10 @@ def save_input(text):
 	
 	# Save File
 
-	f = open(f'/home/mholmes/.cbin/.np-saved-files/' + name, 'x')
+	f = open(f'/home/mholmes/.scripts/.np-saved-files/' + name, 'x')
 	f.write(text)
 	f.close()
-	print('Saved Session at /home/mholmes/.cbin/.np-saved-files')
+	print('Saved Session at /home/mholmes/.scripts/.np-saved-files')
 
 # saves with optional name specified as the first argument
 def __save_input(text, i):
@@ -48,10 +48,10 @@ def __save_input(text, i):
 
 	# Save File
 
-	f = open(f'/home/mholmes/.cbin/.np-saved-files/{name}', 'x') 
+	f = open(f'/home/mholmes/.scripts/.np-saved-files/{name}', 'x') 
 	f.write(text)
 	f.close()
-	print('Saved Session at /home/mholmes/.cbin/.np-saved-files')
+	print('Saved Session at /home/mholmes/.scripts/.np-saved-files')
 
 # executes bash with the NP prompt
 def execute_bash(command):
